@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+:root{
+  --main-font: "Noto Sans KR", sans-serif;
+--sub-font: "Noto Serif KR", serif;
+--main-color: #c27a34;
+}
+
+body {line-height: 1.5; font-family:var(--main-font); color: #333; font-size: 1.6rem; overflow-x: hidden;  }
+.inner { max-width: 1640px; padding: 0 20px; margin: 0 auto; }
+
+/* header */
+#header { padding: 15px 0 0; position: absolute;left: 0; top: 0; z-index: 3; width: 100%; /* border-bottom: 1px solid #ddd; */}
+#header h1 {filter: invert(100%);}
+#header nav {margin: 0 auto 0 80px;}
+#header .inner { display: flex; justify-content: space-between; align-items: center; max-width: 1740px;}
+#header nav .gnb { display: flex; }
+#header .gnb > li  {position: relative;}
+#header .gnb > li::before {  content: ""; transition: all 0.5s; display: block; width: 0; height: 5px; bottom: 1px; background: var(--main-color); position: absolute; left: 50%; transform: translateX(-50%);}
+#header .gnb > li > a {display: block; padding: 20px 40px; font-size: 2rem; color: #fff; font-family: var(--sub-font);}
+#header .gnb > li:hover::before {width: 160px; }
+/* 효과주기 */
+
+
+#header .gnb > li .depth2 {display: none; position: absolute; width:500px; z-index: 5;}
+#header .gnb > li .depth2 li { display: inline-block;}
+#header .gnb > li .depth2 li a {display: block; padding: 15px; }
+
+.mgnb_wrap {display: none;  position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/common/mgnb_bg.png)no-repeat center center/cover ;   }
+.mgnb_wrap .mgnb { width: 70%; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); border-bottom: 1px solid rgba(255,255,255,0.7);}
+.mgnb_wrap .mgnb>li { font-weight: 700; text-transform: uppercase; padding: 40px; display: flex; flex-wrap: wrap;  align-items: center; border-top: 1px solid rgba(255,255,255,0.7); font-size: 3rem; color: #fff;  }
+.mgnb_wrap .mgnb>li a { width: 300px;}
+.mgnb_wrap .mgnb>li .mdepth2 { font-size: 2rem; color: rgba(255, 255, 255, 0.5); display: flex;}
+.mgnb_wrap .mgnb>li .mdepth2 li { padding: 0 20px; font-weight: 400; font-size: 2rem;}
+
+
+
+.mgnb_close { width: 30px; height: 30px; font-size: 0; background: url(../images/common/icon_close_w.svg); right: 20px; top: 30px; position: absolute; cursor: pointer;}
+
+
+#header .depth2_bg {display: none; width: 100%; height: 60px; background: #fff; border-top: 1px solid rgba(0, 0,0, 0.1);}
+
+
+#header .util { display: flex; gap: 30px; text-align: center;}
+#header .util .ham {width: 30px; height: 30px; background: url(../images/common/ham.png) no-repeat center center; font-size: 0; cursor:pointer;  }
+#header .util .store { display: inline-block; background: var(--main-color); padding: 10px 30px; color: #fff; border-radius: 30px 30px;}
+
+
+
+#header.active { background: #fff; height: 150px; }
+#header.active h1 { filter: invert(0);}
+#header.active .gnb > li > a { color: #000;}
+#header.active .util .ham { filter: invert(100%);}
+
+
+@media (max-width:1200px) {
+  #header h1 img { width: 80%;}
+  #header .gnb > li { display: none;}
+  #header .util .store {display: none;}
+  .mgnb_wrap .mgnb { width: 60%;}
+  .mgnb_wrap .mgnb > li { font-size: 2.5rem; padding: 30px; }
+  .mgnb_wrap .mgnb > li .mdepth2 { font-size: 1.6rem; padding: 10px ;}
+
+};
+
+@media (max-width:986px) {
+  .mgnb_wrap .mgnb > li { flex-wrap: wrap;}
+  .mgnb_wrap .mgnb > li > a { width: 100%; }
+  .mgnb_wrap .mgnb >li > .mdepth2  { width: 100%;}
+}
+
+
+@media (max-width:574px) {
+  .mgnb_wrap .mgnb { width: 90%;}
+  .mgnb_wrap .mgnb > li  { font-size: 1.5rem; padding: 10px }
+  .mgnb_wrap .mgnb > li .mdepth2 li { font-size: 1rem; padding: 5px ;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+#footer {padding: 100px 0; }
+#footer .inner {position: relative;}
+#footer .footer_logo { display: flex; gap: 15px;}
+
+
+#footer .footer_right {position: absolute; right: 0; top: 0; text-align: end;}
+#footer .footer_right dl dt {font-weight: 700;}
+#footer .footer_right dl dd {font-family: var(--sub-font); font-size: 3.5rem; color: var(--main-color); font-weight: 500; padding: 20px 0 30px; font-weight: 700;}
+#footer .footer_right p {opacity: 0.5;}
+
+#footer .address { padding: 30px 0 35px; font-weight: 500; }
+#footer .address span { opacity: 0.5;}
+#footer .copy { opacity: 0.5;}
+
+
+@media (max-width: 1200px ) {
+  #footer {padding: 50px 0;}
+  #footer .footer_right {position: static; text-align: left; padding: 20px 0 0;}
+  #footer .footer_right dl dd { padding: 15px 0 25px;}
+}
+
+@media (max-width: 768px ) {
+  #footer .inner { font-size: 1.5rem;}
+}
+
+
+
+
+
+
